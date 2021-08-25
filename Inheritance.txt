@@ -1,0 +1,52 @@
+
+public interface Vehicle {
+    String Name(String name);
+    String Color(String color);
+    int Price(int price);
+    String Model(String model);
+}
+class Honda implements Vehicle{
+	private String name;
+	private int price;
+	private String color;
+	private String model;
+
+	@Override
+	public String Name(String name) {
+		this.name = name;
+		return null;
+	}
+
+	@Override
+	public String Color(String color) {
+		this.color=color;
+		return null;
+	}
+
+	@Override
+	public int Price(int price) {
+		this.price=price;
+		return 0;
+	}
+
+	@Override
+	public String Model(String model) {
+		this.model=model;
+		return null;
+	}
+	 
+	public void display() {
+		System.out.print(color+" "+name+" "+model+" "+String.valueOf(price));
+	}
+}
+
+class Main extends Honda{
+	public static void main(String args[]) {
+		Honda mycar=new Honda();
+		mycar.Color("Blue");
+		mycar.Price(1000000);
+		mycar.Name("Amaze");
+		mycar.Model("2020E1");
+		mycar.display();		
+	}
+}
